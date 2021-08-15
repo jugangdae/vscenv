@@ -25,7 +25,7 @@ $ vi ~/.iode.conf
 ```
 [default]
 iode_run = code
-iode_dir = /Users/egotrip/.iode
+iode_dir = /Users/username/.iode
 ```
 create `iode_dir`
 ```
