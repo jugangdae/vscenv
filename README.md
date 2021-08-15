@@ -20,11 +20,12 @@ pip install iode-0.0.1-py3-none-any.whl
 
 create `~/.iode/config`
 ```
-$ cat >> ~/.iode.conf
+$ vi ~/.iode.conf
+```
+```
 [default]
 iode_run = code
-iode_dir = /Users/egotrip/.iode
-^c
+iode_dir = /Users/username/.iode
 ```
 create `iode_dir`
 ```
