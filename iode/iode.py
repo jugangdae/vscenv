@@ -140,7 +140,7 @@ def main():
     global iode
 
     iode['run'] = 'code'
-    iode['dir'] = os.path.join(os.path.expanduser('~'), 'iode'),
+    iode['dir'] = os.path.join(os.path.expanduser('~'), 'iode')
     iode['conf'] = os.path.join(os.path.expanduser('~'), '.iode.conf')
 
     parseConfig(iode)
