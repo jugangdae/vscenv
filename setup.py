@@ -5,6 +5,7 @@ setup(
     version             = '0.0.1',
     description         = 'Isolate your vscode environment and keep it simple!',
     long_description    = open('README.md').read(),
+    long_description_content_type = 'text/markdown',
     author              = 'Gangdae Ju',
     author_email        = 'jugangdae@gamil.com',
     license             = 'MIT',
