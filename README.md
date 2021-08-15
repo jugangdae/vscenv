@@ -1,8 +1,5 @@
-===== 
-IODE
-===== 
-Manage isolated vscode environment.
--------- 
+# IODE
+
 iode is a command-line tool for simple maintenance and management of isolated vscode environments written in Python.
 
 ## download
