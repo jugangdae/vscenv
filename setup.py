@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name                = 'iode',
-    version             = '0.0.1',
+    version             = '0.0.2',
     description         = 'Isolate your vscode environment and keep it simple!',
     long_description    = open('README.md').read(),
     long_description_content_type = 'text/markdown',
