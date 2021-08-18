@@ -3,8 +3,7 @@ import shutil
 import argparse
 import configparser
 
-version = '0.0.1'
-# default path
+version = '0.0.2'
 
 iode = {}
 
@@ -140,7 +139,7 @@ def main():
     global iode
 
     iode['run'] = 'code'
-    iode['dir'] = os.path.join(os.path.expanduser('~'), 'iode')
+    iode['dir'] = os.path.join(os.path.expanduser('~'), '.iode')
     iode['conf'] = os.path.join(os.path.expanduser('~'), '.iode.conf')
 
     parseConfig(iode)
@@ -150,21 +149,21 @@ def main():
     subparsers = parser.add_subparsers()
 
     cmd_add = subparsers.add_parser('add', aliases=['a'], help='Add environment.')
-    cmd_add.add_argument('--iode-dir', '-d', help='set iode directory')
+    cmd_add.add_argument( '-d', '--iode-dir', help='set iode directory')
     cmd_add.add_argument('env')
     cmd_add.set_defaults(func=addIode)
 
     cmd_del = subparsers.add_parser('del', aliases=['d'], help='Delete environment.')
-    cmd_del.add_argument('--iode-dir', '-d', help='set specified root dir')
+    cmd_del.add_argument( '-d', '--iode-dir', help='set specified root dir')
     cmd_del.add_argument('env')
     cmd_del.set_defaults(func=delIode)
 
     cmd_list = subparsers.add_parser('list', aliases=['l'], help='Show environment list.')
-    cmd_list.add_argument('--iode-dir', '-d', help='set specified root dir')
+    cmd_list.add_argument( '-d', '--iode-dir', help='set specified root dir')
     cmd_list.set_defaults(func=listIode)
 
     cmd_run = subparsers.add_parser('run', aliases=['r'], help='run vscode with iode.')
-    cmd_run.add_argument('--iode-dir', '-d', help='set specified root dir')
+    cmd_run.add_argument( '-d', '--iode-dir', help='set specified root dir')
     cmd_run.add_argument('env')
     cmd_run.add_argument('path')
     cmd_run.set_defaults(func=runIode)
