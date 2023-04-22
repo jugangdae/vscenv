@@ -9,7 +9,7 @@ import shutil
 import argparse
 import configparser
 
-version = '0.0.3'
+version = '0.1.0'
 
 iode_run_cmd = 'code' # 'code' or 'code-insider' 
 iode_dir_path = os.path.join(os.path.expanduser('~'), '.iode')
@@ -131,7 +131,11 @@ def main():
     cmd_run.set_defaults(func=_run)
     
     args = arg_parser.parse_args()
-    args.func(args)
+
+    try:
+        args.func(args)
+    except AttributeError:
+        arg_parser.parse_args(['-h'])
 
 if __name__ == '__main__':
     main()
