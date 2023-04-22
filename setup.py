@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name                = 'iode',
-    version             = '0.0.2',
+    version             = '0.0.3',
     description         = 'Isolate your vscode environment and keep it simple!',
     long_description    = open('README.md').read(),
     long_description_content_type = 'text/markdown',
@@ -15,7 +15,7 @@ setup(
     install_requires    = [],
     package_data        = {},
     packages            = find_packages(exclude = []),
-    keywords            = ['iode', 'manage', 'isolated', 'vscode', 'envoronment', 'simple'],
+    keywords            = ['iode', 'manage', 'isolated', 'vscode', 'environment', 'simple', 'cli', 'tool'],
     zip_safe            = False, # Use zip_safe, if you use pacaged_data.
     classifiers         = [
         'Programming Language :: Python :: 3',
@@ -25,6 +25,10 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     entry_points = {
         'console_scripts': [
