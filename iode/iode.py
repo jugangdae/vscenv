@@ -9,7 +9,7 @@ import shutil
 import argparse
 import configparser
 
-version = '0.1.0'
+version = '0.1.1'
 
 iode_run_cmd = 'code' # 'code' or 'code-insider' 
 iode_dir_path = os.path.join(os.path.expanduser('~'), '.iode')
@@ -107,8 +107,8 @@ def main():
         config_parser.read(iode_conf_path)
         iode_run_cmd = config_parser['setting']['iode_run']
         iode_dir_path = config_parser['setting']['iode_dir']
-        print(f'run_cmd = {iode_run_cmd}')
-        print(f'dir_path = {iode_dir_path}')
+        # print(f'run_cmd = {iode_run_cmd}')
+        # print(f'dir_path = {iode_dir_path}')
   
     if not os.path.exists(iode_dir_path):
         os.makedirs(iode_dir_path)
