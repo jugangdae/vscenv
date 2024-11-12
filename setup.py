@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name                = 'iode',
+    name                = 'vscenv',
     version             = '0.1.1',
     description         = 'Isolate your vscode environment and keep it simple!',
     long_description    = open('README.md').read(),
@@ -9,13 +9,13 @@ setup(
     author              = 'Gangdae Ju',
     author_email        = 'jugangdae@gamil.com',
     license             = 'MIT',
-    url                 = 'https://github.com/jugangdae/iode',
+    url                 = 'https://github.com/jugangdae/vscenv',
     donwload_url        = '',
     python_requires     = '>=3',
     install_requires    = [],
     package_data        = {},
     packages            = find_packages(exclude = []),
-    keywords            = ['iode', 'manage', 'isolated', 'vscode', 'environment', 'simple', 'cli', 'tool'],
+    keywords            = ['vscenv', 'manage', 'isolated', 'vscode', 'environment', 'simple', 'cli', 'tool'],
     zip_safe            = False, # Use zip_safe, if you use pacaged_data.
     classifiers         = [
         'Programming Language :: Python :: 3',
@@ -32,7 +32,7 @@ setup(
     ],
     entry_points = {
         'console_scripts': [
-            'iode = iode.iode:main'
+            'vscenv = vscenv.vscenv:main'
         ]
     }
 )

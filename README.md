@@ -1,6 +1,6 @@
-# IODE - Management of isolated VSCODE environments
+# vscenv - Management of isolated VSCODE environments
 
-IODE is a command-line tool that makes it easy to maintain and manage isolated vscode environments written in Python.
+vscenv is a command-line tool that makes it easy to maintain and manage isolated vscode environments written in Python.
 
 ![](./resources/img.png)
 
@@ -9,47 +9,47 @@ IODE is a command-line tool that makes it easy to maintain and manage isolated v
 ## Installation
 - Option 1 : Install from pypi
     ```
-    pip install iode --user
+    pip install vscenv --user
     ```
 - Option 2 : Install from soruce
     ```
-    git clone https://github.com/jugangdae/iode
-    cd iode
+    git clone https://github.com/jugangdae/vscenv
+    cd vscenv
     pyhton -m build
-    pip install iode-0.0.1-py3-none-any.whl
+    pip install vscenv-0.0.1-py3-none-any.whl
     ```
 ---
 ## Commands
 
-1. `create` : Create a new IODE environment.
+1. `create` : Create a new vscenv environment.
     ```
-    iode create [iode_env]
-    iode c [iode_env]
+    vscenv create [vscenv_env]
+    vscenv c [vscenv_env]
     ```
-2. `list` : Show iode env list
+2. `list` : Show vscenv env list
     ```
-    iode list
-    iode l
+    vscenv list
+    vscenv l
     ```
-3. `run` : Executes VSCODE using an IODE environment
+3. `run` : Executes VSCODE using an vscenv environment
     ```
-    iode run [iode_env] [work_path]
-    iode r [iode_env] [work_path]
+    vscenv run [vscenv_env] [work_path]
+    vscenv r [vscenv_env] [work_path]
     ```
-4. `Delete` : Delete an IODE environment.
+4. `Delete` : Delete an vscenv environment.
     ```
-    iode delete [iode_env]
-    iode d [iode_env]
+    vscenv delete [vscenv_env]
+    vscenv d [vscenv_env]
     ```
 5. `help` and `version`
     ```
-    iode -h, --help
-    iode -v, --version
+    vscenv -h, --help
+    vscenv -v, --version
     ```
 ---
-## Config (~/.iodeconfig)
+## Config (~/.vscenvconfig)
 ```
 [setting]
-iode_run = [code or code-insider]
-iode_dir = [path of iode environments directory]
+vscenv_run = [code or code-insider]
+vscenv_dir = [path of vscenv environments directory]
 ```
