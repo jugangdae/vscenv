@@ -10,15 +10,16 @@ import argparse
 import configparser
 import subprocess
 
-version = '0.1.1'
+version = '0.1.2'
 
-vscenv_run_cmd = 'code' # 'code' or 'code-insider'
+vscenv_cmd = 'code' # 'code' or 'code-insider'
 vscenv_dir_path = os.path.join(os.path.expanduser('~'), '.vscenv')
 vscenv_conf_path = os.path.join(os.path.expanduser('~'), '.vscenvconf')
 
 def _list(args):
     for i in os.listdir(vscenv_dir_path):
-        print(i)
+        if not i.startswith('.'):
+            print(i)
     return 0
 
 def _create(args):
@@ -61,7 +62,7 @@ def _run(args):
     userdataDir = os.path.join(codeDir, 'userdata')
     extensionsDir = os.path.join(codeDir, 'extensions')
     
-    cmd = [vscenv_run_cmd]
+    cmd = [vscenv_cmd]
 
     if not os.path.exists(codeDir):
         print(f'ERROR: {args.env} not found.')
@@ -84,17 +85,19 @@ def _run(args):
     return 0
 
 def main():
+    global vscenv_cmd, vscenv_dir_path
+
     if not os.path.exists(vscenv_conf_path):
         config_parser = configparser.ConfigParser()
         config_parser.add_section("setting")
-        config_parser.set("setting", "vscenv_run", vscenv_run_cmd)
+        config_parser.set("setting", "vscenv_cmd", vscenv_cmd)
         config_parser.set("setting", "vscenv_dir", vscenv_dir_path)
         with open(vscenv_conf_path, "w") as fp:
             config_parser.write(fp)
     else:
         config_parser = configparser.ConfigParser()
         config_parser.read(vscenv_conf_path)
-        vscenv_run_cmd = config_parser['setting']['vscenv_run']
+        vscenv_cmd = config_parser['setting']['vscenv_run']
         vscenv_dir_path = config_parser['setting']['vscenv_dir']
   
     if not os.path.exists(vscenv_dir_path):
@@ -112,7 +115,7 @@ def main():
     cmd_delete = subparsers.add_parser('delete', aliases=['d'], help='Delete a vscenv environment.')
     cmd_delete.add_argument('env', help='Name of the environment to delete')
     cmd_delete.set_defaults(func=_delete)
-    cmd_run = subparsers.add_parser('run', aliases=['r'], help='Run VSCODE using a vscenv environment.')
+    cmd_run = subparsers.add_parser('run', aliases=['r'], help='Run vscode using a vscenv environment.')
     cmd_run.add_argument('env', help='Name of the environment to run')
     cmd_run.add_argument('path', help='Path to the file to open')
     cmd_run.set_defaults(func=_run)
